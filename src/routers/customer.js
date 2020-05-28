@@ -18,7 +18,6 @@ router.post('/customer/login', async(req, res) => {
 
 router.post('/customer', async(req, res) => {
     const customer = new Customer(req.body)
-    console.log(customer)
     try{
         await customer.save();
         const token = await customer.generateAuthToken()
